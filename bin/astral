@@ -1,0 +1,39 @@
+#!/bin/bash
+
+case "$1" in
+ update)
+  sudo xbps-install -Syu
+  ;;
+ shutdown)
+  sudo shutdown -h now
+  ;;
+ reboot)
+  sudo reboot
+  ;;
+ wifi)
+  impala
+  ;;
+ btop)
+  /usr/bin/btop
+  ;;
+ bluetooth)
+  bluetui	
+  ;;
+ audio)
+  wiremix
+  ;;
+ *)
+	echo "Astral OS Command System"
+	echo "Usage: astral [command]"
+	echo ""
+	echo "Commands:"
+	echo " update	- Update system packages"
+	echo " shutdown	- Shuts down the system"
+	echo " reboot	- Reboots the system"
+	echo " wifi	- Manage WiFi with impala"
+	echo " btop	- Open system monitor"
+	echo " bluetooth	- Manage bluetooth with bluetui"
+	echo " audio	- manage audio with wiremix"
+	echo ""
+ ;;
+esac
